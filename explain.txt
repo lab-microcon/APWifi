@@ -1,0 +1,23 @@
+# SOBRE EL CANAL 6 EN WiFi.begin(usu.c_str(), cla.c_str(), 6);
+Canales WiFi: Las redes WiFi operan en diferentes frecuencias, las cuales se dividen en "canales". 
+En la banda de 2.4 GHz (la más común), hay 11 o 13 canales superpuestos (dependiendo de la región), 
+aunque los canales 1, 6 y 11 son los menos superpuestos y, por lo tanto, los más recomendados para evitar interferencias.
+Propósito del 6: Al incluir 6 como el tercer argumento en WiFi.begin(), 
+le estás diciendo explícitamente a tu dispositivo que intente conectarse a la red cuyo SSID es usu y contraseña cla, pero solo en el canal 6.
+¿Por qué es útil?
+Conexión más rápida: Si sabes que tu punto de acceso (router) está configurado en un canal específico, 
+tu dispositivo puede ir directamente a ese canal en lugar de escanear todos los canales disponibles, lo que puede acelerar la conexión.
+Mejor rendimiento en entornos ruidosos: En lugares con muchas redes WiFi, 
+elegir un canal específico que esté menos congestionado puede mejorar la estabilidad y el rendimiento de la conexión.
+Solución de problemas: A veces, si un dispositivo tiene problemas para conectarse, 
+especificar el canal puede ayudar a diagnosticar si el problema está relacionado con el escaneo de canales o interferencias.
+
+# .C_STR()
+La función WiFi.begin() que viste anteriormente (donde usabas .c_str()) es un ejemplo perfecto de esto. 
+El método .c_str() de un objeto String convierte la String en una cadena de estilo C (const char*) 
+para que pueda ser utilizada por funciones que esperan ese formato.
+
+# WIFI.DISCONNET();
+Actúa como un "reset" de la conexión WiFi antes de cada nuevo intento. 
+Esto garantiza que cada WiFi.begin() comience desde cero, limpiando cualquier estado de conexión anterior y 
+asegurando que el dispositivo solo se concentre en establecer la conexión con las credenciales que se le acaban de proporcionar.
